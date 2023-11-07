@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="task-form">
+        <form action="/add" method="POST">
+            <input type="text" name="title" placeholder="Enter task title..." required>
+            <textarea name="description" placeholder="Enter task description..."></textarea>
+            <input type="date" name="deadline">
+            <button type="submit" class="add-task-button">Add Task</button>
+        </form>
+    </div>
+    <div class="tasks-container">
+        {% for task in tasks %}
+        <div class="task-card">
+            <div class="task-content">
+                <h4 class="task-title">{{ task.title }}</h4>
+                <p class="task-description">{{ task.description }}</p>
+                <p class="task-deadline">Deadline: {{ task.deadline.strftime('%Y-%m-%d') if task.deadline else 'No deadline' }}</p>
+                {% if not task.complete %}
+                    <div class="task-actions">
+                        <a href="{{ url_for('edit', task_id=task.id, complete='true') }}" class="task-action complete-task">Complete</a>
+                        <a href="/edit/{{ task.id }}" class="task-action edit-task">Edit</a>
+                        <a href="/delete/{{ task.id }}" class="task-action delete-task">Delete</a>
+                    </div>
+                {% else %}
+                    <p class="task-action complete-task complete-task-box">Completed!</p>
+                    <div class="task-actions">
+                        <a href="{{ url_for('edit', task_id=task.id) }}" class="task-action edit-task">Edit</a>
+                        <a href="/delete/{{ task.id }}" class="task-action delete-task">Delete</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% else %}
+            <p>No tasks found</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

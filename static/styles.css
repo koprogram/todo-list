@@ -1,0 +1,246 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.tasks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.task-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 20px;
+    position: relative;
+}
+
+.task-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.task-title {
+    font-size: 18px;
+    margin: 0;
+}
+
+.task-actions a {
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #e7e7e7;
+    color: black;
+    margin-right: 10px;
+}
+
+.task-actions a:hover {
+    background-color: #d7d7d7;
+}
+
+.add-task-button {
+    padding: 10px;
+    background-color: #5aac44;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-task-button:hover {
+    background-color: #519839;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin-right: 10px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #5aac44;
+}
+
+.container {
+    position: relative;
+}
+
+p.completed {
+    color: #5aac44;
+    font-weight: bold;
+}
+
+
+.task-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px; /* Add some space between the title and actions */
+}
+
+.task-actions a {
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #e7e7e7;
+    color: black;
+    margin-left: 10px; /* Add spacing between the links */
+}
+
+
+/* If you want to apply colors to the 'Complete' and 'Delete' actions */
+.complete-task {
+    background-color: #5aac44;
+    color: white;
+}
+
+.delete-task {
+    background-color: #c3777a;
+    color: white;
+}
+
+.task-form {
+    background-color: #f7f7f7; /* Light gray background */
+    padding: 20px;
+    max-width: 800px; /* Maximum width of the form */
+    margin: 30px auto; /* Center the form on the page */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space out form elements */
+}
+
+.task-form input[type="date"] {
+    padding: 10px;
+    margin-bottom: 10px; /* Space between form elements */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 4px; /* Slightly rounded corners on inputs */
+    width: 40%; /* Full width */
+}
+
+.task-form input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px; /* Space between form elements */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 4px; /* Slightly rounded corners on inputs */
+    width: 50%; /* Full width */
+}
+
+.task-form textarea {
+    padding: 10px;
+    margin-bottom: 10px; /* Space between form elements */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 4px; /* Slightly rounded corners on inputs */
+    width: 100%; /* Full width */
+    margin-right: 10px;
+}
+
+.task-form label {
+    font-weight: bold; /* Make labels bold */
+}
+
+.task-form input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #5cb85c; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.task-form input[type="submit"]:hover {
+    background-color: #449d44; /* Darker green on hover */
+}
+
+/* Styling for the cancel button/link, if you have one */
+.task-form a.cancel {
+    text-decoration: none;
+    color: #999;
+    font-size: 0.9em;
+}
+
+.task-form a.cancel:hover {
+    color: #666;
+}
+
+.add-task-button {
+    padding: 5px 10px; /* Smaller padding */
+    margin-left: 20px;
+    font-size: 0.8em; 
+    line-height: 1; 
+    border-radius: 4px; /* Consistent with other inputs */
+}
+
+.add-task-button:hover {
+    background-color: #e6e6e6; /* Slightly darker background on hover */
+    border-color: #adadad; /* Slightly darker border on hover */
+}
+
+.task-card.blue {
+    background-color: #cceeff;
+}
+
+.task-card.green {
+    background-color: #ccffcc;
+}
+
+.task-card.yellow {
+    background-color: #ffffcc;
+}
+
+.task-card.red {
+    background-color: #ffcccc;
+}
+
+.complete-task-box {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #28a745; /* A shade of green */
+    background-color: #eaffea; /* A light green background */
+    color: #28a745; /* Text color */
+    text-decoration: none; /* Removes the underline from links */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.complete-task-box:hover {
+    background-color: #28a745; /* Darker green background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+
